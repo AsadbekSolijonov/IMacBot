@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/var/bots/IMacBot/app.py", line 4, in <module>
+    import middlewares, filters, handlers
+  File "/var/bots/IMacBot/handlers/__init__.py", line 2, in <module>
+    from . import users
+  File "/var/bots/IMacBot/handlers/users/__init__.py", line 3, in <module>
+    from . import calculate
+  File "/var/bots/IMacBot/handlers/users/calculate.py", line 7, in <module>
+    from handlers.users.calculate_class import Calculate
+  File "/var/bots/IMacBot/handlers/users/calculate_class.py", line 3, in <module>
+    from utils.db_api.database import SalePresent
+  File "/var/bots/IMacBot/utils/db_api/database.py", line 2, in <module>
+    import sqlite3
+  File "/usr/local/lib/python3.9/sqlite3/__init__.py", line 23, in <module>
+    from sqlite3.dbapi2 import *
+  File "/usr/local/lib/python3.9/sqlite3/dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ImportError: dynamic module does not define module export function (PyInit__sqlite3)

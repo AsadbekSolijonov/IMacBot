@@ -37,13 +37,10 @@ async def change_month(message, month, repl=None):
     month_value = None
     try:
         month_value = float(message.text.replace(f'{repl}', '').strip())
-        logging.warning(month_value)
     except Exception as e:
         await message.reply(
             f"⚠️ Foizni xato yozdingiz <tg-spoiler>{message.text}</tg-spoiler> emas.\nIltimos qaytadan harakat qiling!")
         return
-
-    logging.warning(f"crud: {await check_crud()}")
 
     SalePresent().insert_one_month(month_value=month_value, month=month, crud=await check_crud())
 

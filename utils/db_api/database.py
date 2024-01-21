@@ -1,12 +1,12 @@
 import logging
-import sqlite3
+import pysqlite3
 
 
 class Database:
     def __init__(self):
         try:
-            url_db = '/Users/asadbeksolijonov/Bots/imac/database.db'
-            self.connection = sqlite3.connect(url_db)
+            url_db = '/var/bots/IMacBot/database.db'
+            self.connection = pysqlite3.connect(url_db)
             self.cursor = self.connection.cursor()
         except Exception as e:
             logging.warning("Ma'lumotlar ba'zasiga ulanishda xatolik yuz beradi!")
