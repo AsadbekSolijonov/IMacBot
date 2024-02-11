@@ -5,7 +5,7 @@ import pysqlite3
 class Database:
     def __init__(self):
         try:
-            url_db = '/var/bots/IMacBot/database.db'
+            url_db = '/Users/asadbeksolijonov/Bots/imac/database.db'
             self.connection = pysqlite3.connect(url_db)
             self.cursor = self.connection.cursor()
         except Exception as e:

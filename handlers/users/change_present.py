@@ -34,6 +34,7 @@ async def check_crud():
 
 
 async def change_month(message, month, repl=None):
+    chat_id = message.chat.id
     month_value = None
     try:
         month_value = float(message.text.replace(f'{repl}', '').strip())
@@ -41,8 +42,10 @@ async def change_month(message, month, repl=None):
         await message.reply(
             f"⚠️ Foizni xato yozdingiz <tg-spoiler>{message.text}</tg-spoiler> emas.\nIltimos qaytadan harakat qiling!")
         return
-
-    SalePresent().insert_one_month(month_value=month_value, month=month, crud=await check_crud())
+    if str(chat_id) in ADMINS:
+        SalePresent().insert_one_month(month_value=month_value, month=month, crud=await check_crud())
+    else:
+        await message("⚠️ To'g'ri xarakatlanish uchun tugmalardan foydalaning")
 
     await message.answer(f"✅ <b>{month}</b>\n<b>{month_value}%</b> ga o'zgartirildi!\nKo'rish uchun: /change_present")
 
