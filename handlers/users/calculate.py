@@ -15,7 +15,7 @@ from utils.db_api.database import Users
 
 @dp.message_handler(text=["Muddatli to'lov"])
 async def calculate(message: types.Message):
-    telegram_msg = "Olmoqchi bo'lgan tavaringizni to'liq narxini kiriting.\nMasalan$: 1000"
+    telegram_msg = "💸 Xarid qilmoqchi bo'lgan tavaringizni to'liq narxini kiriting.\nMasalan$: 1000"
     await message.reply(telegram_msg)
     await CalculateState.calculation.set()
 
