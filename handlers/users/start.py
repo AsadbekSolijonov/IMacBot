@@ -19,4 +19,4 @@ async def bot_start(message: types.Message):
 
     url = 'media/image/logo.jpg'
     with open(url, 'rb') as pic:
-        await message.answer_photo(photo=pic, caption=telegram_msg)
+        await message.answer_photo(photo=pic, caption=telegram_msg, reply_markup=DefaultKeyboards().detail_pay)
