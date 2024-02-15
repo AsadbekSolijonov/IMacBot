@@ -17,6 +17,6 @@ async def bot_start(message: types.Message):
     \n💬Chat: @macshop_admin
     \n📞Tel: +998 (91) 797 91 13"""
 
-    url = 'media/image/logo.png'
+    url = 'media/image/logo.jpg'
     with open(url, 'rb') as pic:
         await message.answer_photo(photo=pic, caption=telegram_msg)
